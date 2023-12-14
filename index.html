@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React-1</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        let holder= 'Malumot yozing!'; function App() { const [text, setText] = React.useState(""); return(
+        <div className="container">
+            <div className="box">
+                <input className="inp" type="text" placeholder={holder} value={text} onChange={(event)=>setText(event.target.value)}/>
+                <h2>
+                    {text.length
+                    < 1 ? 'Malumot yoq' : (text.length <=5 ? ' Sizning malumotingiz 5 tagacha ' : ' Sizning malumotingiz 5 dan oshiq ')}{text} </h2>
+            </div>
+        </div> )} const app = document.getElementById('root'); const root = ReactDOM.createRoot(app); root.render(
+        <App/>)
+
+    </script>
+</body>
+
+</html>
